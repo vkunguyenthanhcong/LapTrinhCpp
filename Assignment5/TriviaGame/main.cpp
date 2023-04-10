@@ -1,6 +1,13 @@
 #include "Trivia.cpp"
 #include <ctime>
 main(){
+    string namePlayer1;
+    string namePlayer2;
+    cout << "Enter Player 1's name : " << endl;
+    cin>>namePlayer1;
+    cout << "Enter Player 2's name : " << endl;
+    cin>>namePlayer2;
+
     srand(time(NULL));
     Trivia trivia;
     Trivia questions[10] = {
@@ -18,7 +25,7 @@ main(){
     int player1Score = 0;
     int player2Score = 0;
     for (int i = 0; i < 5; i++) {
-        cout << "Player 1's turn:" << endl;
+        cout << "Player 1's turn: " << endl;
         int questionIndex = rand() % 10;
         cout << questions[questionIndex].getQuestion() << endl;
         cout << "1. " << questions[questionIndex].getAnswer1() << endl;
@@ -51,13 +58,13 @@ main(){
 
     if (player1Score > player2Score)
     {
-        cout << "Player 1 WIN";
+        cout << "Player " << namePlayer1 << " WIN ";
     }else if (player1Score < player2Score)
     {
-        cout << "Player 2 WIN";
+        cout << "Player " << namePlayer2 << " WIN";
     }else
     {
-        cout << "Player 1 and Player 2 DRAW";
+        cout << "Player " << namePlayer1 << " and Player "  << namePlayer2 << " DRAW";
     }
     
     return 0;
